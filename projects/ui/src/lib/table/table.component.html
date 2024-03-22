@@ -1,29 +1,26 @@
-<table>
-    <thead>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-    </thead>
-    <tbody>
+
+<table id="customers">
+	<thead>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+	</thead>
+  <tbody  >
+    <ng-container *ngFor="let customer of customers; let i=index ">
+      <tr class="sub-header" *ngIf="i%3 == 0 && i != 0; ">
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Email</td>
+      </tr>
+      
         <tr>
-            <td>john</td>
-            <td>Doe</td>
-            <td>John@example.com</td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.email}}</td>
         </tr>
-        <tr>
-            <td>john</td>
-            <td>Doe</td>
-            <td>John@example.com</td>
-        </tr>
-        <tr>
-            <td>john</td>
-            <td>Doe</td>
-            <td>John@example.com</td>
-        </tr>
-        <tr>
-            <td>john</td>
-            <td>Doe</td>
-            <td>John@example.com</td>
-        </tr>
-    </tbody>
+      
+    </ng-container>
+    
+  </tbody>
+
 </table>

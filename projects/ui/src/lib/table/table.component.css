@@ -1,6 +1,27 @@
-table {
-    width:100% ;
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#customers td, #customers th {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  
+#customers tr:hover {
+  background-color: #ddd;
 }
-table th {
-    margin: 0;
-}
+  
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #212429;
+    color: white;
+  }
+  tr:nth-child(4n) {
+    background-color: #d0e7dd;
+    font-weight: bold;
+  }
