@@ -47,25 +47,7 @@ ngOnInit(): void {
     lastName : 'Dooley',
     email : 'july@example.com'
   },
-  {
-    id : 7,
-    firstName : 'John',
-    lastName : 'Doe',
-    email : 'john@example.com'
-  },
-  {
-    id : 8,
-    firstName : 'Mary',
-    lastName : 'Moe',
-    email : 'mary@example.com'
-  },
-  {
-    id : 9,
-    firstName : 'july',
-    lastName : 'Dooley',
-    email : 'july@example.com'
-  },
-  
+    
     ] 
   }
 }
