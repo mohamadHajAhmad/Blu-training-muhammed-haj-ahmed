@@ -7,12 +7,17 @@
 	</thead>
   <tbody  >
     <ng-container *ngFor="let customer of customers; let i=index ">
-      <tr class="sub-header" *ngIf="i%3 == 0 && i != 0; ">
-        <td>Firstname</td>
-        <td>Lastname</td>
-        <td>Email</td>
+
+    <ng-container *ngIf="i % 3 == 0 && i != 0">
+      <tr >
+        <td colspan="3"></td> 
       </tr>
-      
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th> 
+        <th>Email</th>
+      </tr>
+    </ng-container>
         <tr>
           <td>{{customer.firstName}}</td>
           <td>{{customer.lastName}}</td>
