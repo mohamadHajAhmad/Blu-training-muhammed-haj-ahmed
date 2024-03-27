@@ -14,7 +14,7 @@
   background-color: #ddd;
 }
   
-#customers thead {
+#customers > tr:first-child {
     padding-top: 12px;
     padding-bottom: 12px;
     margin-bottom: 20px;

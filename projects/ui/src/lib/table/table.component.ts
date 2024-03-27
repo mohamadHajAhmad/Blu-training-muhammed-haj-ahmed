@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Customer } from './customer';
+import { TableConfiguration } from './table-configuration';
 
 @Component({
   selector: 'lib-table',
@@ -7,6 +8,7 @@ import { Customer } from './customer';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  @Input() tableConfig! : TableConfiguration
   customers! : Customer[] 
   asdasd :  any
 ngOnInit(): void {

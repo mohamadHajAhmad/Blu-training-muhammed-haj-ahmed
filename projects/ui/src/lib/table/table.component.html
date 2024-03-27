@@ -1,21 +1,21 @@
 
 <table id="customers">
-	<thead>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Email</th>
-	</thead>
-  <tbody  >
-    <ng-container *ngFor="let customer of customers; let i=index ">
+	<tr >
+    <th *ngFor="let column of tableConfig.columns;">
+      {{column}}
+    </th >
+	</tr>
+  <tbody>
+    <ng-container *ngFor="let customer of tableConfig.rows; let i=index ">
 
     <ng-container *ngIf="i % 3 == 0 && i != 0">
       <tr >
         <td colspan="3"></td> 
       </tr>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th> 
-        <th>Email</th>
+        <th *ngFor="let column of tableConfig.columns;">
+          {{column}}
+        </th>
       </tr>
     </ng-container>
         <tr>

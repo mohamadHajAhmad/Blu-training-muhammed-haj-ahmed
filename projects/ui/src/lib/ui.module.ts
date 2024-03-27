@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     UiComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     CommonModule
