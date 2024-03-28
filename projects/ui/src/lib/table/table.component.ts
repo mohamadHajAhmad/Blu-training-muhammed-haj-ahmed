@@ -9,8 +9,10 @@ import { TableConfiguration } from './table-configuration';
 })
 export class TableComponent implements OnInit {
   @Input() tableConfig! : TableConfiguration
+  filterValue:string = '';
   customers! : Customer[] 
   asdasd :  any
+  key! : string
 ngOnInit(): void {
   this.customers = [
     {
@@ -51,5 +53,12 @@ ngOnInit(): void {
   },
     
     ] 
+  }
+  inputFocus(column : string) {
+    this.key = column;
+  }
+  inputChanges(value : string){
+    this.filterValue = value
+    console.log('dsad')
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TableConfiguration } from 'projects/ui/src/lib/table/table-configuration';
 
 @Component({
@@ -6,11 +6,12 @@ import { TableConfiguration } from 'projects/ui/src/lib/table/table-configuratio
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
+
   title = 'Blu-training-muhammed-haj-ahmed';
 
   tableConfig : TableConfiguration =  {
-    columns : ["FirstName" , "LastName" , "Email"],
+    columns : ["firstName" , "lastName" , "email"],
     rows : [
       {
         id : 1,

@@ -1,12 +1,20 @@
 
 <table id="customers">
+  
+  <thead>
+    <tr>
+      <td *ngFor="let column of tableConfig.columns;">
+        <input type="text" (focus)="inputFocus(column)"  #inputField (input)="inputChanges(inputField.value)" placeholder="filter on {{column}}">
+      </td>
+    </tr>
+  </thead>
 	<tr >
-    <th *ngFor="let column of tableConfig.columns;">
-      {{column}}
+    <th *ngFor="let column of tableConfig.columns;" >
+      {{column}} 
     </th >
 	</tr>
   <tbody>
-    <ng-container *ngFor="let customer of tableConfig.rows; let i=index ">
+    <ng-container *ngFor="let customer of tableConfig.rows | filter : key : filterValue; let i=index ">
 
     <ng-container *ngIf="i % 3 == 0 && i != 0">
       <tr >
