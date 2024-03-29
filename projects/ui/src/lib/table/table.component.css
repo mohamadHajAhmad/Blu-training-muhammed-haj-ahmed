@@ -48,9 +48,11 @@ tr:nth-child(5n)   {
   #customers input {
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid #ddd;
+    border: 2px solid #9a9a9a;
     width: 95%;
     color: #212429;
   }
-  
+  /* th :nth-child(3) {
+    width: 50%;
+  } */
   

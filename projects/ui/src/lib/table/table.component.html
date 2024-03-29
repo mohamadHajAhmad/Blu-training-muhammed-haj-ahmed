@@ -3,13 +3,13 @@
   
   <thead>
     <tr>
-      <td *ngFor="let column of tableConfig.columns;">
-        <input type="text" (focus)="inputFocus(column)"  #inputField (input)="inputChanges(inputField.value)" placeholder="filter on {{column}}">
+      <td *ngFor="let column of tableConfig.columns; let i = index" [attr.colspan]="i == tableConfig.columns.length-1 ? 2 : 1"  >
+        <input type="text" (focus)="getKey(i , tableConfig.rows[0])"  #inputField (input)="inputChanges(inputField.value)" placeholder="Filter on {{column}}" >
       </td>
     </tr>
   </thead>
 	<tr >
-    <th *ngFor="let column of tableConfig.columns;" >
+    <th *ngFor="let column of tableConfig.columns; let i = index" [attr.colspan]="i == tableConfig.columns.length-1 ? 2 : 1">
       {{column}} 
     </th >
 	</tr>
@@ -21,15 +21,16 @@
         <td colspan="3"></td> 
       </tr>
       <tr>
-        <th *ngFor="let column of tableConfig.columns;">
+        <th *ngFor="let column of tableConfig.columns; let i = index" [attr.colspan]="i == tableConfig.columns.length-1 ? 2 : 1">
           {{column}}
         </th>
       </tr>
     </ng-container>
         <tr>
-          <td>{{customer.firstName}}</td>
+          <td >{{customer.firstName}}</td>
           <td>{{customer.lastName}}</td>
           <td>{{customer.email}}</td>
+          <td></td>
         </tr>
       
     </ng-container>
