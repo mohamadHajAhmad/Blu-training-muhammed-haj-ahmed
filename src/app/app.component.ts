@@ -6,12 +6,13 @@ import { TableConfiguration } from 'projects/ui/src/lib/table/table-configuratio
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
+
 
   title = 'Blu-training-muhammed-haj-ahmed';
 
   tableConfig : TableConfiguration =  {
-    columns : ["firstName" , "lastName" , "email"],
+    columns : ["First name" , "Last name" , "Email"],
     rows : [
       {
         id : 1,

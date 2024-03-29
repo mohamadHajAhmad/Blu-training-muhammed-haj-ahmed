@@ -7,7 +7,7 @@ import { TableConfiguration } from 'projects/ui/src/lib/table/table-configuratio
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(data : Customer[] , key : string , value: string): Customer[] {
+  transform(data : Customer[] , key : keyof Customer , value: string): Customer[] {
       if (!Array.isArray(data) || !key || value === undefined) {
         return data;
       }

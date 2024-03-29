@@ -3,8 +3,8 @@
   
   <thead>
     <tr>
-      <td *ngFor="let column of tableConfig.columns;">
-        <input type="text" (focus)="inputFocus(column)"  #inputField (input)="inputChanges(inputField.value)" placeholder="filter on {{column}}">
+      <td *ngFor="let column of tableConfig.columns; let i = index">
+        <input type="text" (focus)="getKey(i , tableConfig.rows[0])"  #inputField (input)="inputChanges(inputField.value)" placeholder="filter on {{column}}">
       </td>
     </tr>
   </thead>
