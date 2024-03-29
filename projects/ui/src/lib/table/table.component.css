@@ -52,6 +52,9 @@ tr:nth-child(5n)   {
     width: 95%;
     color: #212429;
   }
+  #customers thead tr td:last-child {
+    width: 50%;
+  }
   /* th :nth-child(3) {
     width: 50%;
   } */
