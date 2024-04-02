@@ -6,13 +6,29 @@ import { TableConfiguration } from 'projects/ui/src/lib/table/table-configuratio
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
+  obj! :Customer
+  keys! : string[]
+  filterOfKeys( customer : Customer , value : string , indexOfProperty : number = 1 ) : boolean{
+    if(indexOfProperty == this.keys.length) 
+      return false
 
-  transform(data : Customer[] , key : keyof Customer , value: string): Customer[] {
-      if (!Array.isArray(data) || !key || value === undefined) {
+    return customer[this.keys[indexOfProperty]]
+    .toLocaleLowerCase()
+    .includes(value.toLocaleLowerCase())
+    || this.filterOfKeys(customer , value , indexOfProperty +1)
+
+  }
+  transform(data : Customer[] , value: string): Customer[] {
+    this.obj = data[0];
+    this.keys = Object.getOwnPropertyNames(this.obj)
+      if (!Array.isArray(data)  || value === undefined) {
         return data;
       }
-      // return data.filter(item => item[key].toLowerCase().includes(value.toLowerCase()));
-      return data.filter(customer => customer[key].toLowerCase().includes(value.toLocaleLowerCase()))
+      value = value.toLocaleLowerCase();
+
+      return data.filter(customer => this.filterOfKeys(customer, value))
+        
+        
   }
 
 }

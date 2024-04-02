@@ -1,20 +1,15 @@
 
 <table id="customers">
-  
-  <thead>
-    <tr>
-      <td *ngFor="let column of tableConfig.columns; let i = index" >
-        <input type="text" (focus)="getKey(i , tableConfig.rows[0])"  #inputField (input)="inputChanges(inputField.value)" placeholder="Filter on {{column}}">
-      </td>
-    </tr>
-  </thead>
+  <caption>
+      <input type="text" #inputField (input)="inputChanges(inputField.value)" placeholder="Search">
+  </caption>
 	<tr >
     <th *ngFor="let column of tableConfig.columns; let i = index" >
       {{column}} 
     </th >
 	</tr>
   <tbody>
-    <ng-container *ngFor="let customer of tableConfig.rows | filter : key : filterValue; let i=index ">
+    <ng-container *ngFor="let customer of tableConfig.rows | filter  : filterValue; let i=index ">
 
     <ng-container *ngIf="i % 3 == 0 && i != 0">
       <tr >

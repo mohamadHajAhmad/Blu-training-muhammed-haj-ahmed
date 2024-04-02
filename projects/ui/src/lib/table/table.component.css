@@ -16,7 +16,7 @@
   
 }
   
-#customers > tr:nth-child(2) {
+#customers > tr:first-of-type {
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -49,11 +49,14 @@ tr:nth-child(5n)   {
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #9a9a9a;
-    width: 95%;
+    width: 98%;
     color: #212429;
   }
   #customers thead tr td:last-child {
     width: 50%;
+  }
+  #customers caption {
+    margin-bottom: 10px;
   }
   /* th :nth-child(3) {
     width: 50%;
