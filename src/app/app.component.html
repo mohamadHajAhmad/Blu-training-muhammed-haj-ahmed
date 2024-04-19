@@ -1,2 +1,29 @@
-
-<lib-table [tableConfig]="tableConfig"></lib-table>
+<lib-table
+  [tableConfig]="tableConfig"
+  [TableWithButton]="cellButton"
+></lib-table>
+<ng-template #cellButton let-rows="rows" let-culomns="columns">
+  <ng-container *ngFor="let row of rows; let i = index">
+    <ng-container *ngIf="i % 3 == 0 && i != 0">
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <th *ngFor="let column of tableConfig.columns; let i = index">
+          {{ column }}
+        </th>
+      </tr>
+    </ng-container>
+    <tr>
+      <td>
+        <button>{{ row.firstName }}</button>
+      </td>
+      <td>
+        <button>{{ row.lastName }}</button>
+      </td>
+      <td>
+        <button>{{ row.email }}</button>
+      </td>
+    </tr>
+  </ng-container>
+</ng-template>

@@ -1,34 +1,50 @@
-
 <table id="customers">
   <caption>
-      <input type="text" #inputField (input)="inputChanges(inputField.value)" placeholder="Search">
+    <input
+      type="text"
+      #inputField
+      [(ngModel)]="filterValue"
+      placeholder="Search"
+    />
   </caption>
-	<tr >
-    <th *ngFor="let column of tableConfig.columns; let i = index" >
-      {{column }} 
-    </th >
-	</tr>
+  <tr>
+    <th *ngFor="let column of tableConfig.columns; let i = index">
+      {{ column }}
+    </th>
+  </tr>
   <tbody>
-    <ng-container *ngFor="let customer of tableConfig.rows | filter  : filterValue; let i=index ">
+    <ng-container
+      *ngTemplateOutlet="
+        TableWithButton ? TableWithButton : default;
+        context: tableConfig
+      "
+    >
+    </ng-container>
+  </tbody>
+</table>
 
+<ng-template #default>
+  <ng-container
+    #default
+    *ngFor="
+      let customer of tableConfig.rows | filter : filterValue;
+      let i = index
+    "
+  >
     <ng-container *ngIf="i % 3 == 0 && i != 0">
-      <tr >
-        <td colspan="3"></td> 
+      <tr>
+        <td colspan="3"></td>
       </tr>
       <tr>
-        <th *ngFor="let column of tableConfig.columns; let i = index" >
-          {{column}}
+        <th *ngFor="let column of tableConfig.columns; let i = index">
+          {{ column }}
         </th>
       </tr>
     </ng-container>
-        <tr>
-          <td >{{customer.firstName}}</td>
-          <td>{{customer.lastName}}</td>
-          <td>{{customer.email}}</td>
-        </tr>
-      
-    </ng-container>
-    
-  </tbody>
-
-</table>
+    <tr>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
+      <td>{{ customer.email }}</td>
+    </tr>
+  </ng-container>
+</ng-template>

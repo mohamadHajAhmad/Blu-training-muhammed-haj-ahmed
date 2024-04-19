@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PipesComponent } from './pipes.component';
-import { FilterPipe } from './filter.pipe';
+import { FilterPipe } from './filter/filter.pipe';
 import { PreRenderPipe } from './preRender/pre-render.pipe';
+import { PipesComponent } from './pipes.component';
 
 
 

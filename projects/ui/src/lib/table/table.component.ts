@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Customer } from './customer';
 import { TableConfiguration } from './table-configuration';
 
@@ -9,9 +9,9 @@ import { TableConfiguration } from './table-configuration';
 })
 export class TableComponent implements OnInit {
   @Input() tableConfig! : TableConfiguration
+  @Input() TableWithButton! : TemplateRef<any>
   filterValue:string = '';
   customers! : Customer[] 
-  asdasd :  any
   key! : string
 ngOnInit(): void {
   // this.customers = [
