@@ -1,9 +1,10 @@
 <lib-table
   [tableConfig]="tableConfig"
   [TableWithButton]="cellButton"
+  (filterUpdated)="onfilterUpdated($event)"
 ></lib-table>
 <ng-template #cellButton let-rows="rows" let-culomns="columns">
-  <ng-container *ngFor="let row of rows; let i = index">
+  <ng-container *ngFor="let row of rows | filter : filterValue;; let i = index">
     <ng-container *ngIf="i % 3 == 0 && i != 0">
       <tr>
         <td colspan="3"></td>

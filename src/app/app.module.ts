@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UiModule } from 'projects/ui/src/public-api';
+import { PipesModule } from 'projects/pipes/src/public-api';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { UiModule } from 'projects/ui/src/public-api';
   imports: [
     BrowserModule,
     UiModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

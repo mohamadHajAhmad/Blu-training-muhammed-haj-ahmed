@@ -11,6 +11,8 @@ export class AppComponent {
 
   title = 'Blu-training-muhammed-haj-ahmed';
 
+  filterValue:string = '';
+
   tableConfig : TableConfiguration =  {
     columns : ["First Name" , "Last Name" , "Email"],
     rows : [
@@ -52,5 +54,8 @@ export class AppComponent {
     },
       
       ] 
+  }
+  onfilterUpdated(value : string) {
+    this.filterValue = value;
   }
 }

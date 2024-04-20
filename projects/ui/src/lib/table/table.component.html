@@ -4,6 +4,7 @@
       type="text"
       #inputField
       [(ngModel)]="filterValue"
+      (input)="filterUpdate()"
       placeholder="Search"
     />
   </caption>
@@ -15,9 +16,7 @@
   <tbody>
     <ng-container
       *ngTemplateOutlet="
-        TableWithButton ? TableWithButton : default;
-        context: tableConfig
-      "
+        TableWithButton ? TableWithButton : default; context: tableConfig"
     >
     </ng-container>
   </tbody>
